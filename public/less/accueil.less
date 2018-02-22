@@ -111,11 +111,14 @@ table {
   width: 350px;
   text-align: center;
   border-collapse: collapse;
-  a{
-  	text-decoration: none;
-    display: inline-block;
-    color: white;
-  }
+	a{
+  		text-decoration: none;
+    	display: inline-block;
+    	color: white;
+	}
+	a:hover, a:active {
+    	color: black;
+	}
 }
 table td, table th {
   border: 1px solid #030303;
@@ -123,6 +126,9 @@ table td, table th {
 }
 table tbody td {
   color: #FFFFFF;
+}
+table tbody{
+	font-size: 100%;
 }
 table tr:nth-child(even) {
   background: #828282;
@@ -140,15 +146,9 @@ table thead th {
 table thead th:first-child {
   border-left: none;
 }
-
-table tfoot {
-  color: #FFFFFF;
-  background: #700909;
-  background: -moz-linear-gradient(top, #944646 0%, #7e2121 66%, #700909 100%);
-  background: -webkit-linear-gradient(top, #944646 0%, #7e2121 66%, #700909 100%);
-  background: linear-gradient(to bottom, #944646 0%, #7e2121 66%, #700909 100%);
-  border-top: 5px solid #960C0C;
+#det:hover,#det:active{
+	color: red
 }
-table tfoot td {
-  font-size: 13px;
+#sauv:hover,#sauv:active{
+	color: green;
 }
