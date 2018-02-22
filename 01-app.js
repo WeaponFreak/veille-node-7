@@ -38,7 +38,7 @@ MongoClient.connect('mongodb://127.0.0.1:27017/carnet_adresse', (err, database) 
 /////// ajouter nom dans mongo db 
 
 app.post('/ajouter', (req, res) => {
- db.collection('adresse').save(req.body, (err, result) => {
+ db.collection('adresse').save(req.body, (err, resultat) => {
  if (err) return console.log(err)
  console.log('sauvegarder dans la BD')
  res.redirect('/')
@@ -86,7 +86,7 @@ app.post('/modifier', (req, res) => {
 
 	console.log('util = ' + util.inspect(req.body));
 
-	 db.collection('adresse').save(req.body, (err, result) => 
+	 db.collection('adresse').save(req.body, (err, resultat) => 
 	 {
 	 if (err) return console.log(err)
 
@@ -99,11 +99,18 @@ app.post('/modifier', (req, res) => {
 app.get('/peupler', (req, res) => {
 
  for (var i = 0; i <= maxNom; i++) {
- 	 db.collection('adresse').save(peupler(), (err, result) => {
+ 	 db.collection('adresse').save(peupler(), (err, resultat) => {
 	 if (err) return console.log(err)
 
 	 })
  }
 
+ res.redirect('/')
+})
+///// vider
+app.get('/vider', (req, res) => {
+ db.collection("adresse").drop(function(err, resultat) {
+    if (err) return console.log(err)
+  });
  res.redirect('/')
 })
